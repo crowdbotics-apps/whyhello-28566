@@ -7,19 +7,12 @@ class Jokes(models.Model):
     joke = models.CharField(
         max_length=256,
     )
-    comedian = models.OneToOneField(
-        "home.Comedians",
-        on_delete=models.PROTECT,
-        related_name="jokes_comedian",
-    )
 
 
 class Comedians(models.Model):
     "Generated Model"
-    cname = models.OneToOneField(
-        "home.Jokes",
-        on_delete=models.CASCADE,
+    name = models.CharField(
+        max_length=256,
         null=True,
         blank=True,
-        related_name="comedians_cname",
     )
